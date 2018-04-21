@@ -10,7 +10,7 @@ engine = create_engine(DATABASE_URI)
 
 try:
     conn = engine.connect()
-    res = conn.execute("INSERT ON jeffrey VALUES (True)")
+    res = conn.execute("INSERT INTO jeffrey VALUES (True)")
 except exc.SQLAlchemyError:
     log = logging.getLogger(__name__)
     log.log(level=__ge__, msg="Error adding major project")
