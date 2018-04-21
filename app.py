@@ -14,7 +14,8 @@ def get_index():
     result = connection.execute("SELECT project FROM jeffrey")
     for row in result:
         if row['project']:
-            project = True
+            if not row['project']:
+                project = True
     return render_template('index.html', project=project)
 
 
