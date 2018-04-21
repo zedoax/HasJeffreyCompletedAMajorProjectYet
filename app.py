@@ -12,8 +12,9 @@ def get_index():
     project = False
     connection = engine.connect()
     result = connection.execute("SELECT project FROM jeffrey")
-    if result['project']:
-        project = True
+    for row in result:
+        if row['project']:
+            project = True
     return render_template('index.html', project=project)
 
 
